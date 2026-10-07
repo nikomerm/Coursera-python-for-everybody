@@ -27,3 +27,12 @@ A Variable is a memory location used to store a value. The Right side is an expr
 ORDER OF EVALUATION: "operator precedence" --> wich operator "takes precedence" over others.
     example: 1 + 2 * 3 - 4 / 5 ** 6        or       1 + (2 * 3) - (4 / (5 ** 6)) 
 Rule : 1. Parenthesis -> 2. Power -> 3. Multiplication -> 4. Addition -> 5. Left to Right
+Modulo Expression -- REMAINDER OPERATOR % Example -> 42 % 10 = 2 -> Devide the number: 42 / 10 = 4
+                                                                    Multiply to check: 10 times 4 is 40
+                                                                    Substruct to find what is left: 42 - 40 = 2
+                                                                    
+                                    **Τετάρτη 07/10/2026**
+Variables Types: type() function -> to ask python what type something is.
+USER INPUT: input() function -> python reads data from the user and the input() function returns a string.
+#comments: # -> for describing what is going to happen in a sequence of code, # -> to turn off a line of code perhaps temporarly
+Pattern that computers do : Input --> Processing --> Output
