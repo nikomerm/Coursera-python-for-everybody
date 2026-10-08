@@ -36,3 +36,49 @@ Variables Types: type() function -> to ask python what type something is.
 USER INPUT: input() function -> python reads data from the user and the input() function returns a string.
 #comments: # -> for describing what is going to happen in a sequence of code, # -> to turn off a line of code perhaps temporarly
 Pattern that computers do : Input --> Processing --> Output
+
+                                    **Πέμπτη 08/10/2026**
+Conditional statments: Boolean expressions -> ask a question and produce a Yes or No result -> using Comparison oparators evaluate True/False or Y/N
+ < Less than
+ <= Less than or Equal to
+ == Equal to -> ? . = assignment statement x=1. x==1 means -> is x equals to 1 ??????? (Ερώτημα)
+ >= Greater than or Equal to
+ > Greater than
+ != Not Equal
+None of these harm the data that they are looking at. They evaluate and they return a True or False
+
+indetation = 4 spaces or 1 tab key. Indetation controls the flow of the execution in conditional blocks
+
+Sequencial code -> Sequential code is code that runs line-by-line, from top to bottom, in the exact order it is written. 
+# Example of Sequential Code
+x = 10
+y = 5
+total = x + y
+print(total)  # This will always print 15
+
+Conditional code -> Conditional code allows a program to choose between different paths based on whether a condition is true or false.
+# Example of Conditional Code
+age = 20
+
+if age >= 18:
+    print("You are an adult.")  # Runs ONLY if age is 18 or older
+else:
+    print("You are a minor.")   # Runs ONLY if age is less than 18
+
+Nested code -> Nested code occurs when you place one control structure inside another control structure (block with in a block).
+# Example of Nested Code
+has_ticket = True
+baggage_cleared = False
+
+if has_ticket:  # Outer condition
+    print("Welcome to security.")
+    
+    if baggage_cleared:  # Inner / Nested condition
+        print("You may board the plane.")
+    else:
+        print("Baggage failed. You cannot board.")
+        
+else:
+    print("You cannot enter the airport.")
+
+two way decisions -> Else
