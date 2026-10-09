@@ -82,3 +82,6 @@ else:
     print("You cannot enter the airport.")
 
 two way decisions -> Else
+
+                                    **Παρασκευή 09/10/2026**
+review day, asked claude to make tasks on what i did the previous days in order to practice.

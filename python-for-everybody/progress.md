@@ -6,3 +6,4 @@
 |6/10|2.5|"Module 2-3-4 Chapter two Variables and Expressions till "Numerical Expressions"|
 |7/10|2.5|"Module 4 finish, Variables Types, Expressions check in, Comments, Assignment: Chapter 2"|
 |8/10|3.0|"Module 5 chapter three: Conditional code, assignment Overtime Pay Calculator"|
+|9/10|3.0|"Module 5, assignments done, also did tasks by claude in order to practice all prev. chapters|
