@@ -85,3 +85,58 @@ two way decisions -> Else
 
                                     **Παρασκευή 09/10/2026**
 review day, asked claude to make tasks on what i did the previous days in order to practice.
+
+                                    **Σάββατο 10/10/2026**
+Using functions: 
+Pattern for code: Sequencial, Conditional, Iterations(επαναλήψεις), Store & Reuse.
+Functions are those things that store and reuse. They are like variables, but they hold - store the code.
+
+function needs to be called in order to execute. When you define, you need to call it (re-use).
+Difference between Parameters and Arguments.  Parameters are the variable names defined function definition. They act as placeholders for the values the function will receive.   Arguments are the actual values you pass into the function when you call it. Example:
+def greet(name): # name is a parameter
+    print("Hello", name) . When you call greet("Sally") the string "Sally" is the argument. Parameters are like empty boxes in the function waiting to be filled and arguments are the items you put into those boxes when you use the function.
+Return Values: return -> stops the function, -> determines the residual(υπόλοιπο) value.
+Some functions do not return values -> Non Fruitful functions, and if they return values they called Fruitful functions.
+
+Extra realization while doing excercises ----->>>>
+
+ Calling a function just means writing its name with parentheses: square(4). That alone runs it. print is a separate step you add only if you want to see a value. What you do next depends on what the function does:
+
+greet()                 # just call it: it performs an action (prints) itself
+
+result = square(4)      # call it and store the returned value for later
+
+print(square(4))        # call it and show the returned value right away
+
+if is_adult(20):        # call it and use the returned value in a decision
+    print("Welcome")
+
+
+Extra realization while doing excercises no2 ----->>>>
+
+                                                  A METHOD TO TRY ON EVERY TASK
+
+Underline what the function receives (parameters).
+
+Underline what it produces (return) or shows (print).
+
+Underline what the main program does: ask the user, call, store, print.
+
+Write the three parts in order: definition, input, call.
+
+Phrase translator
+
+The task says	It means
+“Write a function called f that takes X and Y” ----> It means:	def f(x, y):
+
+“The function should return...” ----> It means:	return inside it
+
+“The function should print...” ----> It means:	print inside it
+
+“Call the function with 5 and 7” ----> It means:	f(5, 7)
+
+“Call the function and print the result” ----> It means:	print(f(5, 7))
+
+“Call the function and store the result” ----> It means:	result = f(5, 7)
+
+“Use the user’s input as the argument” ----> It means:	f(user_value), after input() and conversion
