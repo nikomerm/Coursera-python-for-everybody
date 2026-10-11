@@ -43,13 +43,13 @@
 #Task_5 Write a function called bigger that takes two numbers and returns the larger one. 
 # Ask the user for both numbers, call the function with them, and store the result in a variable called answer. Print answer.
 
-def bigger(x, y):
-    if x > y:
-        return x
-    else:
-        return y
+# def bigger(x, y):
+#     if x > y:
+#         return x
+#     else:
+#         return y
 
-num_x = int(input("Enter number x: "))
-num_y = int(input("Enter number y: "))
-answer = bigger(num_x, num_y)
-print(answer)
+# num_x = int(input("Enter number x: "))
+# num_y = int(input("Enter number y: "))
+# answer = bigger(num_x, num_y)
+# print(answer)

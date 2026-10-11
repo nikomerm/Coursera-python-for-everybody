@@ -8,3 +8,4 @@
 |8/10|3.0|"Module 5 chapter three: Conditional code, assignment Overtime Pay Calculator"|
 |9/10|3.0|"Module 5, assignments done, also did tasks by claude in order to practice all prev. chapters"|
 |10/10|6.0|"Module 6, finished all chapters, did the assignments, did tasks by claude in order to practice functions in the exercises folder"|
+|11/10|2.0|"Module 7, chapter five "Loops and Iteration", Quiz done, missing assignment for this chapter"|
