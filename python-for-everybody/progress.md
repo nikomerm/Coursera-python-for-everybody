@@ -9,4 +9,5 @@
 |9/10|3.0|"Module 5, assignments done, also did tasks by claude in order to practice all prev. chapters"|
 |10/10|6.0|"Module 6, finished all chapters, did the assignments, did tasks by claude in order to practice functions in the exercises folder"|
 |11/10|2.0|"Module 7, chapter five "Loops and Iteration", Quiz done, missing assignment for this chapter"|
-|12/10|3.5|"Review for course 1, doint claud mini projects before moving to course 2 data structures"|
+|12/10|3.5|"Review for course 1, doing claud mini projects before moving to course 2 data structures"|
+|14/10|3.0|"Review and finish all tasks by claude combining all chapters in course 1"|
