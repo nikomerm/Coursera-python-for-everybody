@@ -195,10 +195,11 @@ Finally, it checks 5. Since 5 is not greater than 9, largest stays 9.
 After going through all numbers, largest holds the value 9, which is the biggest number in the list.
 
 
-Counting, totaling, and filtering in loops:
-Counting: First, counting is like keeping track of how many fruits you have. You start with zero and add one each time you look at a fruit. In code, you set a variable to zero before the loop starts, then add one inside the loop for each item you see. This helps you know how many times the loop ran.
-Totaling: next, totaling is like adding up the weight of each fruit. You start with zero and add the weight of each fruit as you go through the basket. In code, you have a variable for the total, start it at zero, and add each value inside the loop. This way, you get the sum of all the values.
-Filtering: Finally, filtering is like checking each fruit to see if it meets a condition, such as being heavier than 20 grams. If it does, you do something special with it, like picking it out or noting it. In code, you use an "if" statement inside the loop to check the condition and act accordingly.
+**Counting, totaling, and filtering in loops:**
+
+**Counting:** First, counting is like keeping track of how many fruits you have. You start with zero and add one each time you look at a fruit. In code, you set a variable to zero before the loop starts, then add one inside the loop for each item you see. This helps you know how many times the loop ran.
+**Totaling:** next, totaling is like adding up the weight of each fruit. You start with zero and add the weight of each fruit as you go through the basket. In code, you have a variable for the total, start it at zero, and add each value inside the loop. This way, you get the sum of all the values.
+**Filtering:** Finally, filtering is like checking each fruit to see if it meets a condition, such as being heavier than 20 grams. If it does, you do something special with it, like picking it out or noting it. In code, you use an "if" statement inside the loop to check the condition and act accordingly.
 
 Example: 
 # List of numbers to process

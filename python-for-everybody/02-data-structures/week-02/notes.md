@@ -145,3 +145,8 @@ Reads all lines and filters them to print only those containing the keyword.
 Uses continue to skip lines that don't match the filter.
 Counts and prints the number of matching lines.
 Allows the user to repeat or exit.
+
+
+                                                                    **Tuesday 20/10/2026**
+
+Review day : Claude tasks practice. 
