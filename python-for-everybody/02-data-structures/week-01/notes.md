@@ -43,7 +43,8 @@ for letter in fruit:
 Both will print each letter of "banana" on a separate line. 
 
 
-**String Slicing**
+**String Slicing**  
+## we say Up to But not including [1:5]
 slicing lets you pick a start point and an end point to grab a part of the string.
 For example, if you have the word "Pythonista" and you want to get just "Pyth", you can use slicing like this:
 

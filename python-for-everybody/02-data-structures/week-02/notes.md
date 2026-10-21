@@ -149,4 +149,122 @@ Allows the user to repeat or exit.
 
                                                                     **Tuesday 20/10/2026**
 
-Review day : Claude tasks practice. 
+Review day : Claude tasks practice in excercises folder week-02.
+
+                                                                    **Wednesday 21/10/2026**
+**Chapter 8 Lists**
+
+Data Structures: Algorithms are paths that code follows, while data structures are ways to organize variables and memory.
+Lists, dictionaries, and tuples are key data structures that allow storing multiple values in one variable.
+
+Lists are collections enclosed in square brackets, capable of holding multiple items of different types, including other lists.
+Lists are mutable, meaning their contents can be changed after creation, unlike strings which are immutable.
+
+# Creating a list with different types of items, including another list
+my_list = ["apple", 42, 3.14, ["nested", "list"]]
+
+print("Original list:")
+print(my_list)              #my_list contains a string, an integer, a float, and another list.
+
+# Changing the second item (index 1) from 42 to 100
+my_list[1] = 100
+
+print("\nList after changing the second item:")
+print(my_list)                       #We change the integer 42 to 100 by assigning a new value to my_list[1].
+
+# Trying to change a character in a string (this will cause an error)
+fruit = "banana"
+# fruit[0] = "B"  # This line would cause an error because strings are immutable
+
+# Instead, we create a new string
+new_fruit = "B" + fruit[1:]
+print("\nOriginal string:", fruit)
+print("New string after change:", new_fruit)   #Strings cannot be changed character by character, so to "change" a string, we create a new one. 
+ #Original string: banana
+ #New string after change: Banana
+
+ **List Operations and Slicing**
+
+Lists can be concatenated using the + operator, similar to strings, without altering the original lists.
+
+Slicing works like with strings, allowing extraction of sublists by specifying start and end indices, with the end index being exclusive.
+
+# Define a list of numbers
+numbers = [10, 20, 30, 40, 50, 60]
+
+# Slice from index 1 up to but not including index 4
+slice_1 = numbers[1:4]  # [20, 30, 40]
+
+# Slice from start up to but not including index 3
+slice_2 = numbers[:3]   # [10, 20, 30]
+
+# Slice from index 3 to the end
+slice_3 = numbers[3:]   # [40, 50, 60]
+
+**List Methods and Mutability**
+
+Lists have various methods such as append (adds an item to the end), count, extend, index, insert, pop, and remove.
+
+Unlike strings, lists are mutable, so methods like append modify the list in place without returning a new list.
+
+**Using Lists in Loops and Functions**
+
+The 'in' and 'not in' operators check for membership within a list.
+
+Lists maintain the order of elements, and methods like sort can reorder the list in place.
+
+Functions like len, max, min, and sum help analyze list contents.
+
+Examples show how to calculate averages using loops and lists, illustrating memory considerations between accumulating sums directly versus storing values in a list first.
+
+
+
+# Create an empty list
+stuff = list()
+
+# Append items to the list
+stuff.append("book")
+stuff.append(99)
+stuff.append("cookie")
+
+print("Initial list:", stuff)
+
+# Slice the list: get items from index 1 up to but not including 3
+slice_example = stuff[1:3]
+print("Sliced list (index 1 to 2):", slice_example)
+
+# Check if an item is in the list
+print("Is 99 in the list?", 99 in stuff)
+print("Is 15 in the list?", 15 in stuff)
+
+# Sort a list of strings
+friends = ["Joseph", "Glenn", "Sally"]
+print("Friends before sort:", friends)
+friends.sort()
+print("Friends after sort:", friends)
+
+# Calculate sum and average of a list of numbers
+numbers = [3, 9, 5]
+total = sum(numbers)
+count = len(numbers)
+average = total / count
+print("Numbers:", numbers)
+print("Sum:", total)
+print("Average:", average)
+
+
+# Imagine you have a list of numbers, and you want to find out how many of those numbers are greater than 10. Here's how you could do it with a loop:
+
+numbers = [4, 11, 15, 7, 20, 3]
+count_greater_than_10 = 0
+
+for num in numbers:
+    if num > 10:
+        count_greater_than_10 += 1
+
+print("Numbers greater than 10:", count_greater_than_10)   #This is like counting how many apples in a basket are bigger than a certain size by looking at each apple one by one.
+
+
+# List & Strings working together
+
+# !!!! Pattern for how we read a line , break it into pieces and then look each word in the line .split() and then a for loop. !!!!

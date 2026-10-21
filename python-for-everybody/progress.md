@@ -15,3 +15,4 @@
 |16/10|4.0|"Module 1 Chapter 6:Strings , complete plus the assisgnments"|
 |19/10|3.0|"Module 3 Chapter 7:Files, processing files complete plus the assignments"|
 |20/10|3.0|"Module 3 Chapter 7:Files, processing files review tasks by claude in excercises folder"|
+|21/10|2.0|"Module 4 Chapter 8:Lists finished chapters theory, only assignmnets left."|

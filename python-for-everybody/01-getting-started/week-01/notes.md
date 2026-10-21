@@ -114,7 +114,7 @@ if is_adult(20):        # call it and use the returned value in a decision
 
 Extra realization while doing excercises no2 ----->>>>
 
-                                                  A METHOD TO TRY ON EVERY TASK
+                                                  **A METHOD TO TRY ON EVERY TASK**
 
 Underline what the function receives (parameters).
 
@@ -157,7 +157,7 @@ Example:
 Use break when you want to exit the loop early based on a condition.
 Use continue when you want to skip some steps in the current iteration but keep looping.
 
-Definite loops ---> "for loops". Understanding the For Loop: A Beginner-Friendly Explanation
+**Definite loops** ---> "for loops". Understanding the For Loop: A Beginner-Friendly Explanation
 
 Imagine you have a list of your favorite fruits, and you want to say "I love [fruit]" for each one. Instead of repeating the sentence for every fruit manually, you can use a for loop in Python to do it for you automatically. A for loop is like a helpful assistant that goes through each item in a collection (like your list of fruits) one by one and performs the same action for each item.
 
