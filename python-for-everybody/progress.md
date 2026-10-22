@@ -16,3 +16,4 @@
 |19/10|3.0|"Module 3 Chapter 7:Files, processing files complete plus the assignments"|
 |20/10|3.0|"Module 3 Chapter 7:Files, processing files review tasks by claude in excercises folder"|
 |21/10|2.0|"Module 4 Chapter 8:Lists finished chapters theory, only assignmnets left."|
+|22/10|2.5|"Module 4 Chapter 8:Finished theory and assignments, code practice by claude done."|

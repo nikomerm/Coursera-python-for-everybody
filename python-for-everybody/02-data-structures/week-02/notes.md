@@ -268,3 +268,123 @@ print("Numbers greater than 10:", count_greater_than_10)   #This is like countin
 # List & Strings working together
 
 # !!!! Pattern for how we read a line , break it into pieces and then look each word in the line .split() and then a for loop. !!!!
+
+. If you want to break a string into words, you can use the split method:
+
+
+>>> s = 'pining for the fjords'
+>>> t = s.split()
+>>> print(t)
+['pining', 'for', 'the', 'fjords']
+>>> print(t[2])
+the
+
+
+Once you have used split to break the string into a list of words, you can use the index operator (square bracket) to look at a particular word in the list.
+
+You can call split with an optional argument called a delimiter that specifies which characters to use as word boundaries. The following example uses a hyphen as a delimiter:
+
+
+>>> s = 'spam-spam-spam'
+>>> delimiter = '-'
+>>> s.split(delimiter)
+['spam', 'spam', 'spam']
+
+# another example with split()
+
+**Example 1: split, then loop over the words**
+line = "But soft what light"
+words = line.split()
+
+for word in words:
+    print(word)
+
+**Output:** 
+But
+soft
+what
+light    #split() makes the list, and the for loop visits one word at a time.
+
+
+**Example 2: count the words in a line**
+line = "It is the east and Juliet is the sun"
+count = 0
+
+for word in line.split():
+    count = count + 1
+
+print(count)   
+
+**Output:** 9           ## You can write line.split() directly in the for line, so you don’t need a separate words variable.
+
+
+**Example 3: split on a different character**
+
+email = "stephen.marquard@uct.ac.za"
+parts = email.split("@")
+
+for part in parts:
+    print(part)
+
+**Output:**                  #With an argument, split() cuts at that exact text instead of at spaces.
+stephen.marquard
+uct.ac.za
+
+**Example 4: loop over a file, then over each line’s words**
+
+fh = open("romeo.txt")
+
+for line in fh:
+    words = line.split()
+    print("Words on this line:", len(words))
+    for word in words:
+        print("   ", word)   
+        
+**Output:** This is the nested pattern from your assignment: the outer loop goes through lines, and the inner loop goes through the words of the current line. len(words) gives the number of items in a list.
+
+**Example 5: Here’s one example that combines all four pieces. It finds the words in a sentence that start with a given letter**
+
+line = "But soft what light through yonder window breaks"
+count = 0
+
+for word in line.split():
+    if word.startswith("w"):
+        print(word)
+        count = count + 1
+
+print("Words starting with w:", count)
+
+**Output:**
+what
+window
+Words starting with w: 2           
+
+#How it works
+
+line.split() makes the list of words.
+for word in ... visits one word at a time.
+word.startswith("w") is true only if that word begins with w. Here it’s called on a word, not a whole line.
+The if decides which words get printed and counted.
+
+
+# The guardian pattern in Python is a programming practice where you add a condition to check for potential problems before executing code that might cause errors. It acts as a "guard" to prevent the program from crashing by skipping or handling problematic cases early.
+
+Why it is important:
+
+It prevents runtime errors like "index out of range" by ensuring the data meets certain conditions before accessing it.
+It makes the code more robust and reliable when dealing with unpredictable or messy data.
+It helps maintain program flow by safely handling edge cases, such as blank lines or missing data.
+#Understanding the Guardian Pattern with a Simple Example
+
+The guardian pattern is like having a safety guard in your code that checks if everything is okay before moving forward. Imagine you're about to open a box, but first, you check if the box is actually there and not empty. If the box is empty, you skip opening it to avoid problems. In programming, this means checking if the data you want to use is valid before using it, so your program doesn't crash.
+
+Here's a simple example in Python that shows this idea. Suppose you have a list of words from a sentence, and you want to print the first word only if the list is not empty:
+
+words = input("Enter a sentence: ").split()
+
+ #Guardian pattern: check if the list has at least one word
+if len(words) < 1:
+    print("No words to process, skipping.")
+else:
+    print("The first word is:", words[0])
+In this example, the guardian pattern is the if len(words) < 1 check. It protects the program from trying to access the first word when there are no words, which would cause an error. This way, the program safely handles empty input.
