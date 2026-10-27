@@ -388,3 +388,140 @@ if len(words) < 1:
 else:
     print("The first word is:", words[0])
 In this example, the guardian pattern is the if len(words) < 1 check. It protects the program from trying to access the first word when there are no words, which would cause an error. This way, the program safely handles empty input.
+
+
+
+                                                                **Friday 23/10/2026**
+**Data Structures : Dictionaries : Chapter 9**
+
+What are dictionaries? : 
+Dictionaries in Python are like special collections that store information in pairs, where each piece of information has a unique label or "key."
+dictionaries use these keys to find values directly. This makes dictionaries very powerful and popular because you can store and access data quickly using meaningful tags instead of just numbers. In Python, you create a dictionary using curly braces {} and add items by assigning a value to a key, like this:
+
+cabinet = {}
+cabinet['summer'] = 12
+cabinet['fall'] = 3
+cabinet['spring'] = 75
+print(cabinet['fall'])  # This will print 3
+Here, 'summer', 'fall', and 'spring' are keys, and 12, 3, and 75 are their corresponding values.
+
+
+**Comparing Dictionaries Vs Lists:**
+Lists, are like a row of numbered boxes where you can only find things by their position, like the first box, second box, and so on. If you want the third item, you say list[2] (because counting starts at zero). Lists are great when order matters or when you want to go through items one by one. 
+But if you want to find something quickly by a name or label, dictionaries are much better because they let you jump straight to the item without searching through everything.
+
+**Key Differences Between Lists and Dictionaries in Python:**
+
+**Indexing:**
+Lists use integer indices starting at 0 to access elements by position.
+Dictionaries use keys (often strings) to access values by label.
+
+**Order:**
+Lists maintain the order of items as inserted.
+Dictionaries (since Python 3.7) maintain insertion order but are accessed by keys, not position.
+
+**Use Case:**
+Lists are ideal for ordered collections where position matters.
+Dictionaries are ideal for collections where you want to look up values by meaningful keys quickly.
+
+**Syntax:**
+Lists use square brackets: [value1, value2, value3]
+Dictionaries use curly braces with key-value pairs: {'key1': value1, 'key2': value2}
+In short, use lists when order and position matter, and use dictionaries when you want to associate values with unique keys for fast lookup.
+
+
+# Part 2 Dictionaries: Counting with Dictionaries
+
+How Python uses dictionaries to create histograms, which count occurrences of items such as names.
+A **histogram** is a graphical bar chart that shows the frequency distribution of continuous numerical data. (Ένα ιστόγραμμα είναι μια γραφική απεικόνιση δεδομένων που δείχνει πώς κατανέμονται οι τιμές σε ένα σύνολο πληροφοριών, χρησιμοποιώντας παρακείμενα ορθογώνια (στήλες))
+**Histogram Concept**
+A histogram counts how many times each item appears, storing the counts in a dictionary with items as keys and counts as values.
+This approach scales to large datasets, allowing counting of millions of items efficiently.
+
+**Handling Dictionary Keys**
+
+Directly accessing a dictionary key that doesn't exist causes an error **(traceback)**, but this can be avoided by checking if the key is in the dictionary using the "in" operator.
+Using an if-else structure, you can initialize the count for a new key to 1 or increment the count if the key already exists.
+
+**Example:**
+
+names = ['Alice', 'Bob', 'Alice', 'Charlie', 'Bob', 'Bob']
+counts = {}
+
+for name in names:
+    if name not in counts:
+        counts[name] = 1  # First time seeing the name, start count at 1
+    else:
+        counts[name] = counts[name] + 1  # Name already in dictionary, add 1 to count
+
+print(counts)
+
+**Explanation:**
+
+We start with an empty dictionary counts.
+For each name in the list, we check if it's already a key in counts.
+If not, we add it with a count of 1.
+If it is, we increase the existing count by 1.
+At the end, counts holds the total number of times each name appeared.
+This approach helps you safely add or update dictionary entries without causing errors.
+
+**Using the get() Method**
+
+The dictionary method get() simplifies counting by returning the current count or a default value (like 0) if the key is not present.
+This reduces multiple lines of code into a single line, making the code cleaner and less error-prone.
+
+**Example:**
+
+names = ['Alice', 'Bob', 'Alice', 'Charlie', 'Bob', 'Bob']
+counts = {}
+
+for name in names:
+    counts[name] = counts.get(name, 0) + 1  # Get current count or 0 if not present, then add 1
+
+print(counts)
+
+**Explanation:**
+
+counts.get(name, 0) returns the current count for name if it exists; otherwise, it returns 0.
+We add 1 to that value and store it back in the dictionary.
+This replaces the if-else check with a single line, making the code cleaner and easier to read.
+
+
+**How do you loop through keys and values in a Python dictionary?**
+
+To loop through keys and values in a Python dictionary, you use the .items() method, which returns key-value pairs as tuples. You can unpack these tuples directly in the for loop.
+
+Example:
+
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+for key, value in my_dict.items():
+    print(key, value)
+This will print each key and its corresponding value. Using .items() is the most common and efficient way to access both keys and values during iteration.
+
+
+
+**Practical example using get() method**
+
+To count words in a text file using a dictionary, you can follow these steps:
+
+1.Open the file for reading.
+2.Read the file line by line.
+3.Split each line into words.
+4.For each word, update the count in the dictionary using the get() method.
+
+counts = {}
+
+with open('filename.txt', 'r') as file:
+    for line in file:
+        words = line.split()
+        for word in words:
+            counts[word] = counts.get(word, 0) + 1
+
+print(counts)
+
+**Explanation:**
+
+Replace 'filename.txt' with your actual file name.
+The split() method breaks each line into words based on whitespace.
+The dictionary counts keeps track of how many times each word appears.
