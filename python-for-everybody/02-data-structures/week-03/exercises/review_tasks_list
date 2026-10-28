@@ -1,0 +1,18 @@
+Task 1: Count replies (strings and files)
+Count the lines that start with Subject: and also contain Re: somewhere in the line. Print Replies: N.
+Reviews: opening a file, looping over lines, startswith(), the in keyword on strings, counters.
+
+Task 2: Unique domains (lists)
+For each From line, take the sender’s address and extract the domain, the part after the @. Collect each domain once in a list, then sort the list and print it.
+Reviews: split() twice (on whitespace, then on "@"), not in, append(), sort().
+Hint: it’s the romeo.txt pattern, applied to domains instead of words.
+
+Task 3: Messages per weekday (dictionaries)
+Count how many From lines were sent on each day of the week (Mon, Tue, and so on). Print the days sorted alphabetically, with their counts, for example Fri 20.
+Reviews: a counting dictionary, sorted() on the keys, printing key and value.
+Hint: the day is one of the words in the split From line.
+
+Task 4: Top 3 domains (dictionaries and tuples)
+Count the messages per sender domain. Then print the 3 domains with the highest counts, highest first, as count domain.
+Reviews: a counting dictionary, .items(), tuples, sorting with reverse=True, slicing a list.
+Hint: build a list of (count, domain) tuples from the dictionary, so that sorting orders by count first.

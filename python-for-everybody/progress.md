@@ -19,3 +19,4 @@
 |22/10|2.5|"Module 4 Chapter 8:Finished theory and assignments, code practice by claude done."|
 |23/10|3.0|"Module 5 Chapter 9:Dictionaries theory and quiz done, missing assignment."|
 |27/10|2.0|"Module 5 Chapter 9:Finished theory and assignments."| 
+|28/10|3.0|"Review Day Data Structures."|

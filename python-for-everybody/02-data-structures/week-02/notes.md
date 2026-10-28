@@ -396,7 +396,8 @@ In this example, the guardian pattern is the if len(words) < 1 check. It protect
 
 What are dictionaries? : 
 Dictionaries in Python are like special collections that store information in pairs, where each piece of information has a unique label or "key."
-dictionaries use these keys to find values directly. This makes dictionaries very powerful and popular because you can store and access data quickly using meaningful tags instead of just numbers. In Python, you create a dictionary using curly braces {} and add items by assigning a value to a key, like this:
+dictionaries use these keys to find values directly. This makes dictionaries very powerful and popular because you can store and access data quickly using meaningful tags instead of just numbers. When constructing a dictionairy you cant put the same key more than once, but you can put the same value more than once.
+In Python, you create a dictionary using curly braces {} and add items by assigning a value to a key, like this:
 
 cabinet = {}
 cabinet['summer'] = 12
