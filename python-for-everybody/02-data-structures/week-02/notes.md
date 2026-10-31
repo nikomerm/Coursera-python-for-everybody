@@ -472,7 +472,7 @@ The dictionary method get() simplifies counting by returning the current count o
 This reduces multiple lines of code into a single line, making the code cleaner and less error-prone.
 
 **Example:**
-
+ 
 names = ['Alice', 'Bob', 'Alice', 'Charlie', 'Bob', 'Bob']
 counts = {}
 
