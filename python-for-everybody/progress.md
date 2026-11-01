@@ -22,4 +22,5 @@
 |28/10|3.0|"Review Day Data Structures."|
 |29/10|3.0|"Review Day Data Structures."|
 |30/10|4.0|"Review tasks by claude - code practice done, Dictionaries, tuples and sorting are covered."|
-|31/10|5.0|"Module 2 Chapter Eleven: Regular Expressions, Using Python to Access Web Data , complete plus the assignments."|
+|31/10|5.0|"Module 2 Chapter 11: Regular Expressions, Using Python to Access Web Data , complete plus the assignments."|
+|01/11|1.0|"Module 3 Chapter 12: Network and Socket theory."|
