@@ -161,7 +161,7 @@ This layer handles data segmentation, error checking, and flow control.
 TCP (Transmission Control Protocol) is the most common protocol used at this layer, providing reliable, ordered data delivery
 
 A **network socket** is one endpoint of a two-way communication link between two programs over a network. It’s defined by an IP address plus a port number (e.g. 192.168.1.5:8080), and programs use it to send and receive data, usually over TCP (reliable, connection-based) or UDP (fast, connectionless).
-Think of it like a phone: the IP is the phone number, the port is the extension, and the socket is the handset you talk through.
+Think of it like a phone: the IP is the phone number, the port is the extension, and the socket is the handset you talk through - the phone call.
 
 # In a nutshell, using TCP:
 
@@ -182,7 +182,7 @@ Then both sides
 Send / receive data through the socket
 Close it when done
 
-**What is a TCP port**: A TCP port is a number (0-65535) that identifies a specific program or service on a computer, so incoming data reaches the right one.
+**What is a TCP port**: A TCP port is a number (0-65535) that identifies a specific program or service on a computer, so incoming data reaches the right one. Extensions of the phone.
 
 An IP address gets data to the right machine; the port gets it to the right application on that machine. Your computer might run a web server, an email client, and a game all at once, and each listens on a different port.Ports act like extension numbers that organize and route network traffic to the right programs on a computer.
 
@@ -256,3 +256,42 @@ Expected output:
 
 Server terminal: Client says: Hello from client!
 Client terminal: Server says: Hello from server!
+
+
+
+                                                                **Monday 02/11/2026**
+
+
+# Network Programs Part 2
+
+**HTTP** Hypertext Transfer Protocol
+Is the dominant Aplication Layer Protocol on the internet.It was invented to retrieve web pages. HTTP is the set of rules to allow browsers to retrieve web documents from servers over the internet.
+
+protocol     host         document
+http://www.dr-chuck.com/page1.htm
+
+Http:// : says use the HTTP protocol
+www.dr-chuck.com : says go to this host
+/page1.htm: says go get this document
+
+What is a HTTP request in Python:
+
+~make a connection to a port           <------Shows how you open
+~send a get request                    <------a socket, send a command
+~get some data back                    <------and then retrieve the data
+
+code example:
+
+import socket
+
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0/r/n/r/n'.encode()
+mysock.send(cmd)
+
+While True:
+    data = mysock.recv(512)
+    if (len(data) <1 ) :
+        break
+    print(data.decode())
+mysock.close()       
