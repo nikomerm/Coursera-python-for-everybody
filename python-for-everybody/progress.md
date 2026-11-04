@@ -24,4 +24,5 @@
 |30/10|4.0|"Review tasks by claude - code practice done, Dictionaries, tuples and sorting are covered."|
 |31/10|5.0|"Module 2 Chapter 11:Regular Expressions, Using Python to Access Web Data , complete plus the assignments."|
 |01/11|1.0|"Module 3 Chapter 12:Network and Socket theory, TCP, 'first layer/end to end layer' ."|
-|02/11|2.5|"Module 3 Chapter 12:Network Programs Part 2, theory done, quiz done, assignment left only."|
+|02/11|2.5|"Module 3 Chapter 12:Network Programs Part 2,3 theory done, quiz done, assignment left only."|
+|04/11|3.5|"Module 3 Chapter 12:Network Programs Part 3,4,5 quiz done, assignments left only"|

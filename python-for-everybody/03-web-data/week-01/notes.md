@@ -295,3 +295,93 @@ While True:
         break
     print(data.decode())
 mysock.close()       
+
+
+# Network Programs Part 3
+
+Chapter 12: Unicode Characters and Strings
+
+Computers only store numbers (binary), so every character gets assigned a number, and that number is what’s actually stored.So computers represent text characters using numeric codes.
+            **ASCII (the early standard)**
+Each character maps to a number from 0 to 127
+Examples: A = 65, B = 66, a = 97, 0 = 48, space = 32
+Fits in 7 bits, stored in 1 byte
+Covers only English letters, digits, and basic symbols
+
+Unicode (the modern solution)
+Gives every character in every language its own number, called a code point. In python 3, all strings are Unicode
+
+          UTF-8 (how Unicode is stored)
+Stores each code point in 1 to 4 bytes
+It’s the most common encoding on the web. Is recommended practise for encoding data to be exchanged between systems, due to its efficiency and compatibility. Its the default and most common encoding. 
+
+Before we send data and beforfe receive , we have to encode and decode this stuff, so that it works out correctly.
+
+                                                        **Wednesday 04/11/2026**
+
+# Network Programs Part 4                                  
+
+**Retrieving Web Pages**
+
+Retrieving web pages means the process where a client (such as a web browser, script, or crawler) requests and downloads content from a web server on the Internet.
+We do that by using urllib, since HTTP is so common we a library that does all the socket work for us and makes web pages look like a file.
+Urllib abstracts socket and HTTP communication, making it easier to open URLs and read Web Content.
+The data read from a URL comes as bytes, so decoding to a string is necessary.
+
+# Network Programs Part 5
+
+**Parsing Web Pages**
+
+Parsing meaning: is the process of breaking down a sequence of symbols, text, or data into smaller, individual components and analyzing how they relate to one another according to a set of grammatical or structural rules. In Computer Science and Programming : Converting raw, unstructured text or data into a structured format (such as a parse tree or Abstract Syntax Tree) that a computer program can easily read, evaluate, or execute. (μεταφράζεται στα ελληνικά κυρίως ως συντακτική ανάλυση ή ανάλυση)
+
+Web Scraping meaning: is the automated process of extracting raw data from websites and converting it into structured formats like CSV, JSON, or databases.
+Aυτόματη συλλογή δεδομένων ή εξαγωγή δεδομένων από ιστοσελίδες (η αυτόματη «αντιγραφή» ή «συλλογή» πληροφοριών, όπως τιμές προϊόντων, κείμενα ή επαφές, από ένα site σε μορφή Excel/database).
+Pull Data , Get your own data back out of a system that has no export capability, Monitor a site for information, Spider the web to make a database for a search engine.
+
+**Why the bigest problem in spidering is the parsing of the HTML that comes back?**
+(Web Spidering : also known as web crawling or web indexing) is the automated process in which an internet bot (called a spider or crawler) systematically browses the World Wide Web to discover, read, and catalog web pages.
+
+Answer: Browsers and HTML are forgiving. If a tag is unclosed or badly nested, the browser quietly guesses what the author meant and displays the page anyway. HTML has no “syntax error” crash like Python does. So websites get away with sloppy code, and a lot of real-world HTML is broken in small ways. That’s what makes parsing hard. When your program reads the HTML, it has to pull out specific pieces (like links). If you write simple code that expects clean, predictable structure, it breaks on:
+Missing or unclosed tags (<p> with no </p>)
+Wrong nesting (<b><i>text</b></i>)
+Odd attributes, inconsistent quotes, extra spaces
+Every site being structured differently
+
+The solution: BeautifulSoup
+
+#                                                                       Summary of Network Programs
+
+**The TCP/IP gives us pipes/sockets between applications** : TCP/IP lets two programs on different computers connect and exchange data, like a pipe between them. The socket is each end of that pipe.
+
+**We designed application Protocols to make use of these pipes** : Application protocols (like HTTP) are the agreed rules for what programs say to each other through those pipes, so both sides understand the messages.
+
+**HyperText Transfer Protocol (HTTP) is a simple yet powerful protocol** : HTTP is simple because it works like a basic conversation: the client sends a request (“give me this page”), and the server sends back a response (the page). Powerful because that one pattern runs the whole web.
+
+**Python has good support for sockets , HTTP and HTML parsing** : Python comes with built-in tools for each layer: the socket module for connections, urllib for HTTP requests, and libraries like BeautifulSoup for reading HTML, so you rarely have to build it all from scratch.
+
+
+## 1 TCP/IP gives us pipes/sockets
+import socket
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))        # the pipe is open
+
+#  2 Application protocol (HTTP) = the rules for talking through the pipe
+cmd = 'GET http://data.pr4e.org/page1.htm HTTP/1.0\r\n\r\n'.encode()
+mysock.send(cmd)                             # 3 the REQUEST
+
+#  3 ...and the RESPONSE comes back
+data = mysock.recv(512)
+print(data.decode())                         # headers + page
+mysock.close()
+
+#  4a Python's HTTP support: urllib does all of the above in 1 line
+import urllib.request
+html = urllib.request.urlopen('http://data.pr4e.org/page1.htm').read()
+
+#  4b Python's HTML parsing: BeautifulSoup reads the messy HTML
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
+for tag in soup('a'):                        # find all links
+    print(tag.get('href'))
+
+**The flow: socket (pipe) → HTTP (rules) → request/response → urllib (easy HTTP) → BeautifulSoup (read the HTML).**
