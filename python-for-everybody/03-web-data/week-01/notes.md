@@ -385,3 +385,30 @@ for tag in soup('a'):                        # find all links
     print(tag.get('href'))
 
 **The flow: socket (pipe) → HTTP (rules) → request/response → urllib (easy HTTP) → BeautifulSoup (read the HTML).**
+
+
+                                                        **Friday 06/11/2026**
+
+
+# Chapter 13: Web Services Part 1
+
+Web services describe how data is exchanged between programs over the internet using agreed-upon formats
+Web services formalize the process of moving data between programs using the HTTP request/response cycle.
+Programs communicate by sending data structures (e.g., Python dictionaries) across networks in a language-neutral format.
+While data is being exchanged between programs using protocols with the HTTP Request/Response cycle, there is a need of a way to represent these data with a specific format: XML & JSON
+
+**What is the network?**
+
+Simple: two or more computers connected so they can exchange data.
+Physical: the cables, Wi-Fi, routers, and switches that carry bytes between machines.
+Layered (more technical): the stack of protocols (Ethernet, IP, TCP, then HTTP on top) that gets bytes from A to B.
+
+The network is the medium (μέσο) that carries bytes. The wire protocol is the agreement on how data is formatted as bytes (JSON, XML, Protocol Buffers).
+
+
+#                       Python Dictionary => serialize (JSON/XML) => bytes over Network => deserialize => Java HashMap
+
+
+Python serializes it into bytes in an agreed format, the bytes cross the network, and Java deserializes them into a HashMap.
+- Network: the medium that carries the bytes
+- Wire protocol: the agreed format of those bytes
