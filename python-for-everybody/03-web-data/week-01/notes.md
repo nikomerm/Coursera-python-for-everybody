@@ -349,7 +349,7 @@ Every site being structured differently
 
 The solution: BeautifulSoup
 
-#                                                                       Summary of Network Programs
+#                                                                Summary of Network Programs
 
 **The TCP/IP gives us pipes/sockets between applications** : TCP/IP lets two programs on different computers connect and exchange data, like a pipe between them. The socket is each end of that pipe.
 
@@ -412,3 +412,97 @@ The network is the medium (μέσο) that carries bytes. The wire protocol is th
 Python serializes it into bytes in an agreed format, the bytes cross the network, and Java deserializes them into a HashMap.
 - Network: the medium that carries the bytes
 - Wire protocol: the agreed format of those bytes
+
+
+**Serialization** = converting an in-memory object into a sequence of bytes (or text) that can be sent or stored.
+**Deserialization** = the reverse: rebuilding the object from those bytes.
+- Serialization: object in memory -> bytes/text (JSON, XML) to send or store
+- Deserialization: bytes/text -> object in memory on the receiving side
+- Needed because different systems (Python, Java) store data differently, so they share a common format
+
+JSON mostly replaced XML for web APIs because it’s lighter and easier to read. XML is still used in older enterprise systems, SOAP services, and config files.
+Libraries do it for you: json.dumps() / json.loads() in Python.You rarely write it by hand, but you need to understand it to debug problems like “why is this field missing?” or “why did my date become a string?”
+
+# XML (eXtensible Markup Language)
+
+What XML is:
+A text format for structured data using nested tags.
+Self-describing: tags name the data.
+
+<user id="1">
+  <name>Nikos</name>
+  <age>30</age>
+</user>
+
+Core rules (well-formed XML)
+
+Exactly one root element.
+Every opening tag needs a closing tag (or <tag/>).
+Tags are case-sensitive and must nest properly.
+Attribute values go in quotes (id="1").
+
+**Concepts worth knowing**
+
+Elements vs attributes: <user id="1">, where id is an attribute and <name> is a child element.
+XSD (schema): defines what a valid document looks like (types, required fields). This is XML’s big strength over plain JSON.
+Namespaces: prevent tag name clashes (xmlns). You’ll see them in SOAP(Simple Object Access Protocol).
+XPath: a query language for finding nodes, e.g. /user/name.
+XSLT: transforms XML into other formats. Rarely needed.
+
+Where you’ll still meet it:
+
+SOAP(Simple Object Access Protocol) web services: banks, insurance, government, and older enterprise systems. #SOAP request:SOAP (Simple Object Access Protocol) is an older web service standard. You send an XML message, called an envelope, over HTTP (usually POST) to a server, and you get an XML message back.
+Config files: Maven pom.xml, Android layouts, Spring configs.
+Document formats: .docx and .xlsx are zipped XML.
+RSS/Atom feeds and SVG.
+
+As a backend dev, you should be able to:
+
+Read and write simple XML by hand.
+Parse it in code (Python: xml.etree.ElementTree).
+Explain XML vs JSON and when XML still makes sense.
+Recognize a SOAP request and know it’s XML over HTTP.
+
+## XML
+- Tag-based, self-describing text format; one root, tags must close and nest properly
+- XSD = schema validation, XPath = query nodes, namespaces = avoid tag clashes
+- Still used in: SOAP, config files (pom.xml), .docx/.xlsx, RSS
+- JSON replaced it for most web APIs (lighter), XML stays in legacy/enterprise
+- Python parsing: xml.etree.ElementTree
+
+
+**XML Schema and Validation**:
+
+XML Schema defines the structure and data types of XML documents to ensure data correctness and agreement between applications.
+Validation is the process of checking an XML document against its schema to confirm it meets the agreed format, independent of data transfer or deserialization.
+
+**Parcing in XML**:
+parsing XML means reading XML text and turning it into a structure your code can navigate (deserialization for XML).
+
+
+# JavaScript Object Notation (JSON)
+**Chapter 13: Web Services Part part 5**
+
+ JavaScript Object Notation(συμβολισμός, μορφή)
+ Serialization Format: JSON
+ JSON is very native to JavaScript & is very simple to use. According to Douglas Crockford(founder): One of the best advantages using JSON is that the data structures thas JSON likes to represent are exactly the same data structures that programming languages represent.
+
+ **Service Oriented Approach - Architecture (SOA)**:
+
+ Allows an application to be broken into parts and distributed across a network.
+ SOA is an architecture where an application is split into independent services. Each service does one business job and exposes it through a well-defined interface, and other programs call it over the network, no matter what language or platform they use.
+
+ **Using API (Application Programming Interfaces)**
+ An API is a contract for interaction. An API (Application Programming Interface) is a defined interface that lets software components communicate. It specifies what requests you can make, how to make them, and what response you get back.
+
+ # example:
+You (the client) sit at the table.
+The menu is the API: it lists what you can order.
+The waiter carries your request to the kitchen and brings back the food.
+You don’t need to know how the kitchen cooks. You only need to know the menu.
+
+**How it connects to what you’ve learned**
+
+A web API is how services in SOA talk to each other.
+The request and response are serialized (JSON or XML) and sent over HTTP.
+SOAP(XML) and REST(JSON) are two styles of web API.

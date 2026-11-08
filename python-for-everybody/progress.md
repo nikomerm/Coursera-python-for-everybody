@@ -27,4 +27,5 @@
 |02/11|2.5|"Module 3 Chapter 12:Network Programs Part 2,3 theory done, quiz done, assignment left only."|
 |04/11|3.5|"Module 4 Chapter 12:Programs that Surf the Web Part 3,4,5 quiz done, assignments left only."|
 |05/11|3.0|"Module 4 Chapter 12:finished. Module 5 Chapter 13: Web Services and XML theory done, quiz & assignment left."|
-|06/11|8.0|"Module 5,6 Chapter 13:Finished."|
+|06/11|8.0|"Module 6 Chapter 13:JSON and the REST Architecture finished."|
+|08/11|8.0|"Review Day Web-Data."|
