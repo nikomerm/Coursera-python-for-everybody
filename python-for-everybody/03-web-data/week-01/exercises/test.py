@@ -1,17 +1,17 @@
-# import socket
+import json
 
-# mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# mysock.connect(('data.pr4e.org', 80))
-# cmd = 'GET http://data.pr4e.org/intro-short.txt HTTP/1.0\r\n\r\n'.encode()
-# mysock.send(cmd)
+orders = '[{"id":1,"item":"Book","price":12.5,"qty":2},{"id":2,"item":"Pen","price":1.2,"qty":10},{"id":3,"item":"Bag","price":30,"qty":1}]'
 
-# while True:
-#     data = mysock.recv(512)
-#     if len(data) < 1:
-#         break
-#     print(data.decode(),end='')
+def total_revenue(orders_json, min_total):
+    info = json.loads(orders_json)
+    total = 0
+    for item in info:
+        cost = item['price'] * item['qty']
+        if cost >= min_total:
+            total = total + cost
+    return total
+    
 
-# mysock.close()
+print(total_revenue(orders, 20))
+print(total_revenue(orders, 0))
 
-# from bs4 import BeautifulSoup
-# print("it works")
