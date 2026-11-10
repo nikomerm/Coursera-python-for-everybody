@@ -4,7 +4,7 @@
 
 # python
 # data = {"users": [
-#     {"name": "Nikos", "address": {"city": "Thessaloniki"}, "orders": [{"id": 1, "total": 25}, {"id": 2, "total": 40}]},
+#     {"name": "Angel", "address": {"city": "Thessaloniki"}, "orders": [{"id": 1, "total": 25}, {"id": 2, "total": 40}]},
 #     {"name": "Kallia", "address": {"city": "Athens"}, "orders": []},
 #     {"name": "Mairi", "orders": [{"id": 3, "total": 10}]}
 # ]}
@@ -16,18 +16,27 @@
 # Return a dict of name: (city, total_spent).
 
 # Expected: summarize_users(data, "unknown") gives
-# {'Nikos': ('Thessaloniki', 65), 'Kallia': ('Athens', 0), 'Mairi': ('unknown', 10)}
+# {'Angel': ('Thessaloniki', 65), 'Kallia': ('Athens', 0), 'Mairi': ('unknown', 10)}
 
 
-
-def summarize_users(data, default_city):
-    users = data['users']
-    print(users)
-    
 data = {"users": [
-    {"name": "Nikos", "address": {"city": "Thessaloniki"}, "orders": [{"id": 1, "total": 25}, {"id": 2, "total": 40}]},
+    {"name": "Angel", "address": {"city": "Thessaloniki"}, "orders": [{"id": 1, "total": 25}, {"id": 2, "total": 40}]},
     {"name": "Kallia", "address": {"city": "Athens"}, "orders": []},
     {"name": "Mairi", "orders": [{"id": 3, "total": 10}]}
 ]}
 
-summarize_users(data, "unknown")
+def summarize_users(data, default_city):
+    summary = dict()
+    users_lst = data['users']
+    for user in users_lst:        
+        address = user.get('address', {})
+        city = address.get('city', default_city)
+        total_spent = 0
+        
+        for order in user['orders']:            
+            total_spent = total_spent + order['total']        
+        summary[user['name']] = (city, total_spent)                  
+    return summary                
+        
+print(summarize_users(data, "unknown"))    
+

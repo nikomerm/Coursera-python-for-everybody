@@ -29,3 +29,5 @@
 |05/11|3.0|"Module 4 Chapter 12:finished. Module 5 Chapter 13: Web Services and XML theory done, quiz & assignment left."|
 |06/11|8.0|"Module 6 Chapter 13:JSON and the REST Architecture finished."|
 |08/11|8.0|"Review Day Web-Data."|
+|09/11|1.0|"Review Day Web-Data."|
+|10/11|3.0|"Review mostly functions, dictionaries by doing claude tasks"|
