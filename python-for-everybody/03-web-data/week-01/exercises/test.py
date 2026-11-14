@@ -15,20 +15,20 @@
 # print(total_revenue(orders, 20))
 # print(total_revenue(orders, 0))
 
-products = [
-    {"name": "Laptop", "price": 800},
-    {"name": "Mouse", "price": 25},
-    {"name": "Monitor", "price": 200},
-    {"name": "Cable", "price": 5}
-]
+# products = [
+#     {"name": "Laptop", "price": 800},
+#     {"name": "Mouse", "price": 25},
+#     {"name": "Monitor", "price": 200},
+#     {"name": "Cable", "price": 5}
+# ]
 
-def expensive_names(products, min_price):
-    items = list()
-    for item in products:
-        if item['price'] >= min_price:
-            items.append(item['name'])
-    return items
+# def expensive_names(products, min_price):
+#     items = list()
+#     for item in products:
+#         if item['price'] >= min_price:
+#             items.append(item['name'])
+#     return items
 
-print(expensive_names(products, 100))   # ['Laptop', 'Monitor']
-print(expensive_names(products, 20))    # ['Laptop', 'Mouse', 'Monitor']
-print(expensive_names(products, 1000))  # []
+# print(expensive_names(products, 100))   # ['Laptop', 'Monitor']
+# print(expensive_names(products, 20))    # ['Laptop', 'Mouse', 'Monitor']
+# print(expensive_names(products, 1000))  # []

@@ -32,3 +32,4 @@
 |09/11|1.0|"Review Day Web-Data."|
 |10/11|3.0|"Review mostly functions, dictionaries by doing claude tasks"|
 |11/11|1.0|"Review task_3 'A real backend pattern' build step by step"|
+|14/11|2.0|"Review task_4  Validate incoming data and save it, validation (what a backend does with every request), json.dump / json.load"|

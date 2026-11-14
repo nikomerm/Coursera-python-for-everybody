@@ -1,0 +1,97 @@
+Task 1: Parse JSON and calculate
+
+Trains: json.loads, list of dicts, for loop
+
+python
+orders = '[{"id":1,"item":"Book","price":12.5,"qty":2},{"id":2,"item":"Pen","price":1.2,"qty":10},{"id":3,"item":"Bag","price":30,"qty":1}]'
+
+Write total_revenue(orders_json, min_total):
+
+Convert the string to Python data.
+Loop through the orders. The total of one order is price * qty.
+Add it up only if the order total is >= min_total.
+Return the sum.
+
+Expected: total_revenue(orders, 20) gives 55.0, and total_revenue(orders, 0) gives 67.0.
+
+Task 2: Nested JSON with missing keys
+
+Trains: nested paths, .get(), dicts (real API data is often incomplete)
+
+python
+data = {"users": [
+    {"name": "Nikos", "address": {"city": "Thessaloniki"}, "orders": [{"id": 1, "total": 25}, {"id": 2, "total": 40}]},
+    {"name": "Maria", "address": {"city": "Athens"}, "orders": []},
+    {"name": "Giorgos", "orders": [{"id": 3, "total": 10}]}
+]}
+
+Write summarize_users(data, default_city):
+
+Loop through the users and, for each one, add up the total of all their orders.
+If a user has no address, use default_city. Use .get() so it doesn’t crash.
+Return a dict of name: (city, total_spent).
+
+Expected: summarize_users(data, "unknown") gives
+{'Nikos': ('Thessaloniki', 65), 'Maria': ('Athens', 0), 'Giorgos': ('unknown', 10)}
+
+Task 3: Call a real API safely
+
+Trains: urlencode, urlopen, error handling (the bread and butter of backend work)
+
+Use the same endpoint as the assignment: http://py4e-data.dr-chuck.net/opengeo?
+
+Write get_place(address):
+
+Build the URL and call the API.
+Return a tuple (formatted, lat, lon, plus_code) from the first result.
+If the JSON is broken or features is empty, return None instead of crashing (use try/except and a length check).
+
+Then loop through this list and print the result, or Not found for each None:
+
+python
+places = ["Irkutsk State University", "NYU", "asdfghjklqwerty"]
+
+Expected: Irkutsk gives plus_code 867FXG3R+M2, NYU starts with 87G7P, and the last one should print Not found.
+
+Task 4: Validate incoming data and save it
+
+Trains: validation (what a backend does with every request), json.dump / json.load
+
+python
+users = [
+    {"name": "Nikos", "email": "n@x.com", "age": 30},
+    {"name": "Maria", "age": 25},
+    {"name": "", "email": "g@x.com", "age": "abc"}
+]
+
+Write validate_users(users, required_fields):
+
+Loop through the users. A user is invalid if a required field is missing, the name is empty, or age is not an int.
+Return two lists: valid (the good users) and errors (strings like "Maria: missing email").
+
+Then save valid to valid_users.json with json.dump(..., indent=4), read it back with json.load, and print it.
+
+Expected: 1 valid user (Nikos) and 2 error messages.
+
+Task 5: One simple XML task
+
+Trains: ElementTree, findall, converting XML to JSON (serialization between formats)
+
+python
+xml_text = """
+<products>
+  <product id="1"><name>Book</name><price>12.5</price></product>
+  <product id="2"><name>Pen</name><price>1.2</price></product>
+  <product id="3"><name>Bag</name><price>30</price></product>
+</products>
+"""
+
+Write xml_to_list(xml_text, min_price):
+
+Parse the XML and loop through the product elements.
+Keep only products with price >= min_price (remember XML text is a string, so convert it).
+Return a list of dicts like {"id": 1, "name": "Book", "price": 12.5}, with id as an int and price as a float.
+
+Then print the result with json.dumps(result, indent=4).
+
+Expected: xml_to_list(xml_text, 10) returns Book and Bag only.
