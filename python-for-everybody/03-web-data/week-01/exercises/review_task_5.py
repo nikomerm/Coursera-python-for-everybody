@@ -31,3 +31,18 @@ xml_text = """
   <product id="3"><name>Bag</name><price>30</price></product>
 </products>
 """
+
+
+def xml_to_list(xml_text, min_price):
+  result = []
+  tree = ET.fromstring(xml_text)  
+  for product in tree.findall('product'):
+    name = product.find('name').text
+    price = float(product.find('price').text)
+    if price >= min_price:
+      product_id = int(product.get('id'))
+      result.append({"id": product_id, "name": name, "price": price})     
+  return result
+      
+    
+print(json.dumps(xml_to_list(xml_text, 10), indent=4))

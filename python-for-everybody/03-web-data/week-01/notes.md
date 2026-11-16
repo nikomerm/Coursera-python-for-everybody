@@ -315,7 +315,7 @@ Gives every character in every language its own number, called a code point. In 
 Stores each code point in 1 to 4 bytes
 It’s the most common encoding on the web. Is recommended practise for encoding data to be exchanged between systems, due to its efficiency and compatibility. Its the default and most common encoding. 
 
-Before we send data and beforfe receive , we have to encode and decode this stuff, so that it works out correctly.
+Before we send and before receive data , we have to encode and decode this stuff, so that it works out correctly.
 
                                                         **Wednesday 04/11/2026**
 
@@ -501,7 +501,7 @@ The menu is the API: it lists what you can order.
 The waiter carries your request to the kitchen and brings back the food.
 You don’t need to know how the kitchen cooks. You only need to know the menu.
 
-**How it connects to what you’ve learned**
+**How it connects to what i've learned**
 
 A web API is how services in SOA talk to each other.
 The request and response are serialized (JSON or XML) and sent over HTTP.

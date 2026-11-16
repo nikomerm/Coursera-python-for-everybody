@@ -50,3 +50,6 @@ print(errors)
 with open("valid_users.json", "r") as f:                               #Opens the same file for reading ("r"). json.load (no s) reads JSON from a file and gives back Python data: here a list with one dictionary (Nikos). print shows it, which proves the save and load worked.
     loaded = json.load(f)
 print(loaded)
+
+print("Type", type(validate_users))
+print("Dir ", dir(validate_users))
