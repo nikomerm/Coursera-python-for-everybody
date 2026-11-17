@@ -156,3 +156,71 @@ bark() is a method. Think: “the dog’s actions.”
 6. Destructor (__del__)
 The code that runs automatically when the object is destroyed (nothing refers to it anymore).
 Think: “the dog leaves.”
+
+
+
+
+
+
+
+                                                                **Tuesday 17/11/2026**
+
+# DATABASES
+# Basic Structure Query Language (SQL)**
+**Relational Databases**
+
+Databases in Programming
+
+Databases are essential for storing and retrieving data efficiently, especially when dealing with large datasets or network limitations.
+Using databases speeds up workflows by separating data retrieval from data analysis.
+A database stores data in tables that are fast to search, sort, and connect. SQL is the language you use to talk to it.
+
+Python & SQL are a powerful thing: Python cleans up the Data, SQL is a great way to store and retrieve Data.
+SQL has 5 basic commands ( CRUD )
+Create a table
+Retrieve some Data
+Insert Data
+Update Data
+Delete Data
+
+**Using Databases with Python**
+
+Database Model = Schema = Contruct
+Is the contruct about the shape of what we're going to store and retrieve in our Database.
+Common Database Systems : Oracle , MySql- open source, Sqlserver, PostGres, SQLite
+
+Creating and Managing a Database
+
+Use SQLite browser or similar tools to create a new database file that stores data in a specialized format optimized for fast retrieval and storage.
+Create tables with a defined schema specifying column names and data types, which act as a contract for the data stored.
+
+**Basic SQL Operations**
+
+**SQL** INSERT
+The insert statement inserts a row into a table
+
+    keyword   table name   list of columns   Sql statement  coresponding values #name,email
+    |    |    |              |                    |          |
+INSERT INTO   Users      (name,email)             VALUES   ('nikos,mm@edu.gr)
+
+**SQL** DELETE
+Deletes a row in a table based on a selection criteria.
+
+DELETE FROM Users WHERE email='mm@edu.gr'
+
+**SQL** UPDATE
+Allows the updating of a field with a where clause(μεταφραση= ρήτρα ή συνθήκη)
+
+UPDATE Users SET name = 'Charles' WHERE email= csev@edu.com
+
+Retrieving Records : SELECT
+The select statement retrieves a group of records you can either retrieve all the records or a subset of the records with a WHERE clause.
+
+SELECT * FROM Users
+SELECT * FROM Users WHERE email = 'csev@edu.com'
+
+Sorting with ORDER BY
+You can add an ORDER BY clause to SELECT statements to get the results sorted in ascending or descending order
+
+SELECT * FROM Users ORDER BY email
+SELECT * FROM Users ORDER BY name
