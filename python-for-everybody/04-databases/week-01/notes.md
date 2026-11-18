@@ -224,3 +224,55 @@ You can add an ORDER BY clause to SELECT statements to get the results sorted in
 
 SELECT * FROM Users ORDER BY email
 SELECT * FROM Users ORDER BY name
+
+
+                                                       **Wednesday 18/11/2026**
+# Data Models and Relational SQL
+**Designing a Data Model**
+
+The concept of database design focusing on linking multiple tables together to efficiently store and manage data for applications.
+
+Designing a Data Model : Plan your tables before writing code. A good design stores each piece of data once and connects tables with numbers (keys).
+"You have to think , the thing that is the most essential to this application"
+
+The Golden Rule
+
+Never put the same string in the database more than once. If data repeats, move it to its own table and refer to it by a number.
+
+Bad design (one table, repeated text):
+
+track	artist	album
+Thunderstruck	AC/DC	Razors Edge
+Hells Bells	AC/DC	Back in Black
+
+“AC/DC” is stored many times. That wastes space, and one typo creates a “different” artist.
+
+Good design (3 tables, linked by keys):
+
+Artist		                         Album		                                   Track	
+id	name	                      id	title, artist_id	               id	title, album_id
+
+The 3 Kinds of Keys
+
+Key	                              Meaning	                                              Example
+
+Primary key	                      unique number for each row	                          Artist.id
+Foreign key	                      a number pointing to another table’s primary key	      Album.artist_id
+Logical key	                      the real-world value you search by	                  Artist.name
+
+
+The primary key is usually an auto-numbered INTEGER PRIMARY KEY.
+Don’t use the logical key (like a name or email) as the primary key.
+Why numbers? They are much faster to search and compare than text.
+
+
+Relationships
+One-to-many: one artist has many albums. Put the foreign key on the “many” side (Album.artist_id).
+Many-to-many: students and courses. A student takes many courses, and a course has many students. You need a connecting table with two foreign keys:
+
+# SQL
+CREATE TABLE Member (
+    user_id INTEGER,
+    course_id INTEGER,
+    PRIMARY KEY (user_id, course_id)
+)

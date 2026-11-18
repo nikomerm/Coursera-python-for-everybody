@@ -35,3 +35,4 @@
 |14/11|2.0|"Review task_4  Validate incoming data and save it, validation (what a backend does with every request), json.dump / json.load"|
 |16/11|3.0|"Module 1 Chapter 14:Object Oriented Python, Object Oriented Definition, Object life Cycle, Object Inheritance complete"|
 |17/11|3.0|"Module 2 Chapter 15:Basic Structured Query Language (SQL), databases lectures done only assignments left"|
+|18/11|3.0|"Module 2-3 Chapter 15:finished assignments and tasks module 2, module 3: Designing a Data Model notes and first lecture"|
