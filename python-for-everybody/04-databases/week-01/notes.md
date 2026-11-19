@@ -276,3 +276,125 @@ CREATE TABLE Member (
     course_id INTEGER,
     PRIMARY KEY (user_id, course_id)
 )
+
+
+**Represanting a Data Model in Tables**
+
+# Primary Key: 
+Unique identifier for each row in a table, often an auto-icrementing number like 1,2,3,4. Is a way for us to refer to a particular row.
+# Foreign Key:
+A column in one table that points to the Primary Key in another table, representing relationships.
+# Logical Key:
+A column or set of columns used to look up rows logically such as title or name.
+
+Extra tip: Naming conventions and consistent structure simplify understanding and mainting the database schema.
+
+## EXAMPLE 
+
+The problem we’re solving
+
+Imagine one table of songs:
+
+title	                          artist
+
+Thunderstruck	                  AC/DC
+Hells Bells	                      AC/DC
+Back in Black	                  AC/DC
+Black Dog	                      Led Zeppelin
+
+“AC/DC” is written 3 times. If someone types “ACDC” once by mistake, the database thinks it’s a different artist.
+
+The fix: write each artist once in its own table, and give each one a number. Songs then store the number instead of the name.
+
+Artist table
+id	                                        name
+
+1	                                     Led Zeppelin
+2	                                     AC/DC
+
+Song table
+id	     title	                   artist_id
+1	  Thunderstruck	                  2
+2	  Hells Bells	                  2
+3	  Back in Black	                  2
+4	  Black Dog	                      1
+
+“AC/DC” now exists in one place. The songs just say “artist number 2”.
+
+The three keys
+
+Think of a school.
+
+Primary key = the student ID number
+
+A number that is unique for every row and never changes.
+Two students can have the same name, but never the same ID.
+In the Artist table, id is the primary key.
+
+Foreign key = writing someone else’s ID number in your own record
+
+It is a column in one table that holds the primary key of another table.
+In the Song table, artist_id is a foreign key. The value 2 means “go to the Artist table, find the row with id 2.” That’s AC/DC.
+It’s called “foreign” because the number belongs to another table.
+
+Logical key = the real-world thing a human uses to find it
+
+You don’t know that AC/DC is “number 2”. You know the name.
+So name is the logical key. It’s what you search by. The number is what the computer uses.
+We mark it UNIQUE so the same name can’t be added twice.
+
+Key	                        Which column	                                                        In plain words
+
+Primary key	                Artist.id	                                                    the unique ID number of a row
+Foreign key	                Song.artist_id	                                                an ID number that points to another table
+Logical key	                Artist.name	                                                    the real name a human searches by
+
+
+# The 5 commands (your cheat sheet)
+What you want	                            Command	                                                Pattern
+ 
+Make a table	                CREATE TABLE	                                                    CREATE TABLE name (column type, column type)
+Add a row	                    INSERT INTO	                                                        INSERT INTO table (columns) VALUES (values)
+Read rows	                    SELECT	                                                            SELECT columns FROM table
+Filter rows	                    WHERE	                                                            ... WHERE column = value
+Change / delete	                UPDATE / DELETE	                                                    UPDATE table SET column = value WHERE ...
+
+
+# How to read a command
+
+SELECT title FROM Song WHERE artist_id = 2
+“Select the title from the Song table where artist_id equals 2.”
+
+
+# SELECT, FROM, WHERE: Exact Roles
+
+SELECT = which columns (the what)
+
+Yes, always columns (or things calculated from columns).
+SELECT title means one column. SELECT title, artist_id means two. SELECT * means all columns.
+It can also hold calculations, like SELECT count(*) (counts rows) or SELECT hex(name), as in your assignment.
+
+FROM = where the data comes from (the where from)
+
+Mostly a table, yes.
+It can also be several tables joined together: FROM Song JOIN Artist ON ... (you’ll use this soon).
+Rarely, a result of another SELECT. You can ignore that for now.
+
+WHERE = which rows (the which ones)
+
+Only rows. It never chooses columns or tables.
+It tests each row, and keeps the rows where the test is true.
+WHERE artist_id = 2 means “keep only the rows where artist_id is 2.”
+The column appears in the test, but only to check its value. It’s not choosing the column to show.
+
+
+# Example to see all three working
+
+id	title	artist_id
+1	Thunderstruck	2
+4	Black Dog	1
+sql
+SELECT title FROM Song WHERE artist_id = 2
+FROM Song: start with the Song table
+WHERE artist_id = 2: keep only row 1
+SELECT title: from that row, show only the title column
