@@ -1,0 +1,22 @@
+Part 1: Design (on paper or in a comment)
+
+A small library needs to track:
+
+books (title, author, year)
+members (name, email)
+loans (which member borrowed which book, and when)
+
+Decide:
+
+What tables you need and what columns each has
+The primary key of each table
+Which column is a foreign key, and what it points to
+Which relationship each pair of tables has (one-to-many or many-to-many)
+
+Part 2: Build it in Python with sqlite3
+
+Write a function create_tables(conn) that creates your tables.
+Write a function add_books(conn, books) that takes a list of tuples like ("Dune", "Frank Herbert", 1965) and uses a for loop to insert each one.
+Write a function get_books_by_author(conn, author) that returns all books by that author.
+Add 4-5 books, then call the third function and print the result.
+

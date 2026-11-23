@@ -209,7 +209,7 @@ Deletes a row in a table based on a selection criteria.
 DELETE FROM Users WHERE email='mm@edu.gr'
 
 **SQL** UPDATE
-Allows the updating of a field with a where clause(μεταφραση= ρήτρα ή συνθήκη)
+Allows the updating of a field with a where (clause(μεταφραση= ρήτρα ή συνθήκη))
 
 UPDATE Users SET name = 'Charles' WHERE email= csev@edu.com
 
