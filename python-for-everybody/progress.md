@@ -37,6 +37,6 @@
 |17/11|3.0|"Module 2 Chapter 15:Basic Structured Query Language (SQL), databases lectures done only assignments left."|
 |18/11|3.0|"Module 2-3 Chapter 15:finished assignments and tasks module 2, module 3: Designing a Data Model notes and first lecture."|
 |19/11|4.0|"Module 3 Chapter 15: finished all lectures, assignments and practise tasks left."|
-|21/11|2.5|"Practice task by Claude in Chapter 15:Data Models and Relational SQL Designing a Library data model."|
+|21/11|2.5|"Practice task by Claude in Chapter 15: Data Models and Relational SQL Designing a Library data model."|
 |23/11|4.0|"Module 4 Chapter 15: Many-to-Many Relationships in SQL lectures done, assignments left."|
-
+|24/11|1.0|"Module 4 Chapter 15: Assignments done, Module 5 Chapter 16: Databases and Visualization first lecture."|

@@ -25,3 +25,39 @@ CREATE TABLE PlaylistTrack (
 Many-to-many = two one-to-many relationships joined by a middle table.
 The junction table holds two foreign keys, and usually nothing else.
 Both foreign keys sit in the junction table, because that is now the "many" side of both relationships.
+
+
+# JOIN
+In a nutshell: a table holds one kind of thing. JOIN glues rows from two tables together using the foreign key, so you can read the data side by side again.
+
+Why JOIN exists
+
+Your Album table stores artist_id = 11, not the name "AC/DC". That avoids repeating text, but a bare 11 is unreadable. JOIN looks up the 11 in the Artist table and brings the name back.
+
+One JOIN, step by step
+sql
+SELECT Album.title, Artist.name
+FROM Album JOIN Artist
+ON Album.artist_id = Artist.id
+SELECT Album.title, Artist.name: which columns I want to see.
+FROM Album JOIN Artist: which two tables to glue.
+ON Album.artist_id = Artist.id: the matching rule. Glue a row of Album to the row of Artist where the foreign key equals the primary key. This is the line that makes it work.
+Table.column notation (like Album.title): both Album and Track have a column called title, and several tables have id. The table name tells SQL which one you mean.
+
+Result: ('Who Made Who', 'AC/DC'), because Album's artist_id 11 matched Artist's id 11.
+
+Chaining several JOINs
+
+That is exactly your grader's query. Each JOIN follows one foreign key:
+
+sql
+SELECT Track.title, Artist.name, Album.title, Genre.name
+FROM Track JOIN Genre JOIN Album JOIN Artist
+ON Track.genre_id = Genre.id
+AND Track.album_id = Album.id
+AND Album.artist_id = Artist.id
+Track.genre_id = Genre.id: Track → Genre
+Track.album_id = Album.id: Track → Album
+Album.artist_id = Artist.id: Album → Artist (the path to the artist goes through Album)
+
+So one result row is a track, with its artist, album and genre names all in one line.
