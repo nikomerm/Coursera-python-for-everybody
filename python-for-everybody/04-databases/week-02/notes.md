@@ -61,3 +61,47 @@ Track.album_id = Album.id: Track → Album
 Album.artist_id = Artist.id: Album → Artist (the path to the artist goes through Album)
 
 So one result row is a track, with its artist, album and genre names all in one line.
+
+                                            **Thursday 26/11/2026**
+# Databases and Visualization
+
+This chapter integrating data retrieval, storage, and visualization in a multi-step data analysis process using Python and databases.
+**Multi-Step Data Gathering and Processing**
+Separate the data gathering process from data cleaning and analysis to handle large datasets and interruptions efficiently.
+Use a restartable gathering process that stores raw data in a local or cloud database, allowing resumption without duplication.
+**Data Cleaning and Analysis**
+After gathering, clean and parse the raw data stored in the database to prepare it for analysis.
+The cleaning phase is faster and can be rerun independently of the gathering phase, enabling efficient data processing.
+
+# Visualization Example: Geocoding and Mapping
+Use geocoding to convert addresses into geographic coordinates and visualize them on a map using Open Street Map.
+The process involves running Python scripts to gather geodata, store it in a SQLite database, parse it into JavaScript, and display pins on an interactive map in a browser.
+This approach teaches foundational concepts of data mining and visualization by building the processes from scratch, providing practical experience with Python, databases, APIs, and web-based visualization tools.
+
+In a nutshell
+
+Retrieving data means getting data from where it's stored so you can work with it. Common sources are files (CSV, Excel), databases (using SQL), and web APIs.
+
+Visualization means turning that data into a chart so patterns are easy to see, such as a bar chart for comparing categories or a line chart for change over time.
+
+The basic flow: retrieve → look at it → visualize
+
+In a nutshell: data mining is finding useful patterns in large amounts of data, and the "technologies" are the tools and techniques used to do it.
+
+Main techniques
+
+Classification: put items into known groups (e.g. spam vs not spam).
+Clustering: group similar items when you don't know the groups beforehand (e.g. customer segments).
+Regression: predict a number (e.g. next month's sales).
+Association rules: find things that happen together (e.g. people who buy bread often buy butter).
+Anomaly detection: spot unusual items (e.g. fraud).
+
+Tools and technologies
+
+Languages and libraries: Python (pandas, scikit-learn), R, SQL.
+Visual tools: Weka, KNIME, RapidMiner, Orange. You build the process by dragging blocks, with little or no code.
+Big data tools: Hadoop, Spark, for data too large for one computer.
+Storage: databases and data warehouses, where the data is kept before mining.
+BI tools: Power BI, Tableau, for exploring and showing results. (Business Intelligence tools)
+Gather raw data → clean it → choose a technique → build a model → check the results → present them
+the raw data and restartable steps are the first part of that process.
